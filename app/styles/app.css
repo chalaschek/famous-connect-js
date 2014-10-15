@@ -1,0 +1,28 @@
+html {
+  font-family: 'Roboto', "HelveticaNeue", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  background: gray;
+  background-color: #000000;
+  background-attachment: fixed;
+  background-position: 50% 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../content/images/metal-background-60.jpg);
+
+}
+
+body{
+  -webkit-font-smoothing: initial;
+}
+
+.backfaceVisibility {
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+
+.design{
+  background-attachment: fixed;
+  background-position: 50% 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../content/images/desi.jpg);
+}
