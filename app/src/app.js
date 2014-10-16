@@ -5,19 +5,12 @@ define(function(require, exports, module) {
   // import dependencies
   var Engine = require('famous/core/Engine');
   var Backbone = require('backbone');
-  var Slide = require('./slide');
-
+  var Slide = require('./slides/slide');
+  var slides = require('./slides/config');
 
   Backbone.sync = function(method, model, success, error) {
     success();
   };
-
-  var slides = [
-    {
-      classList: ['design'],
-      content: ''
-    }
-  ];
 
 
   function initialize(options){
@@ -32,6 +25,7 @@ define(function(require, exports, module) {
     }.bind(this));
 
     Engine.on('mouseup', function(e) {
+      if(e && e.target.localName == 'a') return;
       if(!this._visibileSlide) return;
       this._visibileSlide.forward();
     }.bind(this));
@@ -43,6 +37,8 @@ define(function(require, exports, module) {
     var path = window.location.hash || "";
     var num = path.substring(1) || 1;
     num = parseInt(num);
+
+    if(num > slides.length) return this.navigate('/' + (num-1), {trigger:false});
 
     var slide = this.fetchSlide(num);
 
