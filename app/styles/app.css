@@ -18,10 +18,15 @@ img{
   max-width: 100%;
 }
 
-iframe{
+.iframe{
+  padding-top: 20px;
+}
+
+.iframe iframe{
   max-width: 95%;
   max-height: 100%;
 }
+
 
 .single h1{
   font-size: 80px;
@@ -30,6 +35,7 @@ iframe{
 
 
 .black-background{
+  color: #fff;
   background: rgba(0,0,0,1);
   background: -moz-linear-gradient(-45deg, rgba(0,0,0,1) 0%, rgba(81,82,80,1) 100%);
   background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(0,0,0,1)), color-stop(100%, rgba(81,82,80,1)));
@@ -41,6 +47,7 @@ iframe{
 }
 
 .blue-background{
+  color: #000;
   background: rgba(73,165,191,1);
   background: -moz-linear-gradient(-45deg, rgba(73,165,191,1) 0%, rgba(117,189,209,1) 59%, rgba(147,206,222,1) 100%);
   background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(73,165,191,1)), color-stop(59%, rgba(117,189,209,1)), color-stop(100%, rgba(147,206,222,1)));
@@ -52,6 +59,7 @@ iframe{
 }
 
 .gold-background{
+  color: #000;
   background: rgba(254,182,69,1);
   background: -moz-linear-gradient(-45deg, rgba(254,182,69,1) 0%, rgba(241,231,103,1) 100%);
   background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(254,182,69,1)), color-stop(100%, rgba(241,231,103,1)));
@@ -60,6 +68,17 @@ iframe{
   background: -ms-linear-gradient(-45deg, rgba(254,182,69,1) 0%, rgba(241,231,103,1) 100%);
   background: linear-gradient(135deg, rgba(254,182,69,1) 0%, rgba(241,231,103,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb645', endColorstr='#f1e767', GradientType=1 );
+}
+
+.red-background{
+  background: rgba(192,57,43,1);
+  background: -moz-linear-gradient(-45deg, rgba(192,57,43,1) 0%, rgba(199,92,82,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(192,57,43,1)), color-stop(100%, rgba(199,92,82,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(192,57,43,1) 0%, rgba(199,92,82,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(192,57,43,1) 0%, rgba(199,92,82,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(192,57,43,1) 0%, rgba(199,92,82,1) 100%);
+  background: linear-gradient(135deg, rgba(192,57,43,1) 0%, rgba(199,92,82,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c0392b', endColorstr='#c75c52', GradientType=1 );
 }
 
 .shadow{
@@ -98,6 +117,7 @@ iframe{
 .title .author{
   font-weight: 100;
   font-size: 40px;
+  padding-top: 20px;
 }
 
 .title .twitter{
@@ -113,9 +133,9 @@ iframe{
 }
 
 .title .cjs{
-  position: fixed;
+  /*position: relative;*/
+  padding-top: 60px;
   width: 100%;
-  bottom: 10px;
   font-size: 14px;
 }
 
@@ -179,7 +199,7 @@ iframe{
 
 
 .go-fast, .smooth{
-  background-color: #000;
+  /*background-color: #000;*/
 }
 
 .go-fast h1, .smooth h1{
@@ -202,6 +222,19 @@ iframe{
   margin: 10px 0;
 }
 
+
+.hell{
+  background-color: #fff;
+  background-attachment: fixed;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../content/images/hell.jpg);
+}
+
+
+
+
 .famous .copy{
   font-size: 100px;
   text-align: center;
@@ -210,14 +243,6 @@ iframe{
 
 
 .famous-what{
-  /*
-  background-attachment: fixed;
-  background-position: 50% 0px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url(../content/images/Office.png);
-  */
-  /*background-color: #000;*/
   padding-top: 40px;
 }
 
@@ -252,6 +277,72 @@ iframe{
 }
 
 .code-tree img{
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
+
+.famous-more{
+  font-size: 50px;
+  padding-top: 20px;
+  color: #000;
+}
+
+
+.so-what{
+  background-attachment: fixed;
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../content/images/Who_cares.png);
+  background-color: #fff;
+}
+
+
+.when{
+  font-size: 40px;
+  color: #000;
+  padding-top: 20px;
+}
+
+.caution{
+  font-size: 40px;
+  color: #000;
+  padding-top: 20px;
+}
+
+
+.frameworks{
+  background-attachment: fixed;
+  background-position: 50% 50%;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-image: url(../content/images/frameworks.png);
+  background-color: #fff;
+}
+
+.future{
+  background-attachment: fixed;
+  background-position: 50%;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-image: url(../content/images/future.jpg);
+  background-color: #000;
+}
+
+.resources a{
+  color: #000;
+}
+
+.resources ul{
+  font-weight: 400;
+  padding-top: 40px;
+  list-style: none;
+  font-size: 50px;
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.resources li{
+  margin-bottom: 20px;
+}

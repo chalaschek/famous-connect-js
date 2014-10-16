@@ -5,28 +5,40 @@ define(function(require, exports, module) {
   var slides = [
 
     {
-      classList: ['title', 'black-background'],
+      classList: ['title'],
       content: require('text!./title.html')
     },
 
-    {
-      classList: ['web-is-dead', 'center'],
-      content: require('text!./web-is-dead.html')
+    // {
+    //   classList: ['web-is-dead', 'center'],
+    //   content: require('text!./web-is-dead.html')
 
-    },
+    // },
 
-    {
-      classList: ['facebook-abandons-html5'],
-    },
+    // {
+    //   classList: ['facebook-abandons-html5'],
+    // },
 
-    {
-      classList: ['flashback', 'center'],
-      content: '<img src="/content/images/flashback.jpg"/>'
-    },
+    // {
+    //   classList: ['flashback', 'center'],
+    //   content: '<img src="/content/images/flashback.jpg"/>'
+    // },
 
     {
       classList: ['timeline', 'center'],
       content: '<img src="/content/images/timeline.png"/>'
+    },
+
+    {
+      classList: ['iframe', 'center'],
+      content: '<iframe src="//player.vimeo.com/video/86664858?autoplay=1" width="800" height="800" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+    },
+
+    
+
+    {
+      classList: ['iframe', 'center'],
+      content: '<iframe height="800" width="800" src="http://www.complex.com/2014-fifa-world-cup-guide/" frameborder="0"></iframe>'
     },
 
     {
@@ -49,17 +61,16 @@ define(function(require, exports, module) {
     },
 
     {
+      classList: ['hell']
+    },
+
+    {
       content: require('./famous')
     },
 
     {
-      classList: ['famous-what', 'center'],
-      content: require('text!./famous-what.html')
-    },
-
-    {
-      classList: ['periodic', 'center'],
-      content: require('text!./periodic.html')
+      classList: ['periodic', 'center', 'iframe'],
+      content: '<iframe height="800" width="800" src="http://periodic.famo.us/" frameborder="0"></iframe>'
     },
 
     {
@@ -70,6 +81,12 @@ define(function(require, exports, module) {
     {
       classList: ['famous-hype']
     },
+
+    {
+      classList: ['famous-what', 'center', 'gold-background'],
+      content: require('text!./famous-what.html')
+    },
+
 
     {
       classList: ['famous-aha', 'center', 'gold-background'],
@@ -84,16 +101,16 @@ define(function(require, exports, module) {
     },
 
     {
-      classList: ['single', 'center', 'black-background'],
+      classList: ['single', 'center', 'blue-background'],
       content: '<h1>Fundamentals</h1>'
     },
     {
-      classList: ['single', 'center', 'black-background'],
+      classList: ['single', 'center', 'blue-background'],
       content: '<h1>Forget about DOM</h1>'
     },
 
     {
-      classList: ['single', 'center', 'black-background'],
+      classList: ['single', 'center', 'blue-background'],
       content: '<h1>Render Tree</h1>'
     },
 
@@ -113,7 +130,110 @@ define(function(require, exports, module) {
     },
 
     {
-      content: require('./example-logo')
+      content: require('./example-square')
+    },
+
+    {
+      classList: ['code-tree', 'center', 'blue-background'],
+      content: require('text!./transforms.html')
+    },
+
+    {
+      content: require('./example-square-translate')
+    },
+
+    {
+      classList: ['code-tree', 'center', 'blue-background'],
+      content: require('text!./rotations.html')
+    },
+
+    {
+      content: require('./example-square-rotating')
+    },
+
+    {
+      classList: ['code-tree', 'center', 'blue-background'],
+      content: require('text!./transform-curves.html')
+    },
+
+    {
+      content: require('./example-square-curve')
+    },
+
+    {
+      classList: ['code-tree', 'center', 'blue-background'],
+      content: require('text!./physics.html')
+    },
+
+    {
+      content: require('./example-physics')
+    },
+
+    {
+      classList: ['code-tree', 'center', 'blue-background'],
+      content: require('text!./views.html')
+    },
+
+    {
+      content: require('./example-cube')
+    },
+
+    {
+      classList: ['famous-more', 'center', 'blue-background'],
+      content: require('text!./famous-more.html')
+    },
+
+    {
+      classList: ['frameworks']
+    },
+
+    {
+      classList: ['so-what', 'center']
+    },
+
+    {
+      classList: ['iframe', 'center'],
+      content: require('text!./tunnel.html')
+    },
+
+    {
+      classList: ['iframe', 'center'],
+      content: require('text!./tentacles.html')
+    },
+
+    {
+      classList: ['iframe', 'center'],
+      content: '<iframe src="//player.vimeo.com/video/86664858?autoplay=1" width="800" height="800" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+    },
+
+    {
+      classList: ['iframe', 'center'],
+      content: '<iframe height="800" width="800" src="http://www.complex.com/2014-fifa-world-cup-guide/" frameborder="0"></iframe>'
+    },
+
+    {
+      classList: ['when', 'center', 'blue-background'],
+      content: require('text!./when.html')
+    },
+
+    {
+      classList: ['caution', 'center', 'red-background'],
+      content: require('text!./caution.html')
+    },
+
+    {
+      classList: ['resources', 'center', 'blue-background'],
+      content: require('text!./resources.html')
+    },
+
+    {
+      classList: ['center'],
+      content: '<img src="/content/images/crystal-ball.jpg"/>'
+    },
+
+    {
+      classList: ['title'],
+      content: require('text!./title.html')
     }
 
   ];
