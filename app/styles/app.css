@@ -18,6 +18,19 @@ img{
   max-width: 100%;
 }
 
+ul{
+  font-weight: 400;
+  padding-top: 40px;
+  list-style: none;
+  font-size: 70px;
+  text-align: left;
+  margin: 0 auto;
+}
+
+li{
+  margin-bottom: 20px;
+}
+
 .iframe{
   padding-top: 20px;
 }
@@ -30,7 +43,7 @@ img{
 
 .single h1{
   font-size: 80px;
-  padding-top: 20%;
+  padding-top: 16%;
 }
 
 
@@ -155,7 +168,10 @@ img{
 }
 
 
-
+.map img{
+  max-width: 95%;
+  max-height: 95%;
+}
 
 .web-is-dead{
   background-color: #FC4826;
@@ -215,16 +231,22 @@ img{
 
 
 .what-to-do .content{
-  width: 454px;
   margin: 0 auto;
   text-align: left;
   max-width: 95%;
   font-size: 35px;
   padding-top: 10px;
+  width: 454px;
+}
+
+.what-to-do li{
+  font-size: 35px;
 }
 
 .what-to-do .content h1{
-  margin: 10px 0;
+  margin: 0;
+  padding-top: 40px;
+
 }
 
 
@@ -247,8 +269,9 @@ img{
 }
 
 
-.famous-what{
-  padding-top: 40px;
+
+.famous-what ul{
+  max-width: 575px;
 }
 
 .famous-what h1{
@@ -264,14 +287,12 @@ img{
   background-image: url(../content/images/famous-hype.png);
 }
 
-
-.famous-aha{
-  color: #000;
-  padding-top: 5%;
+.famous-aha ul{
+  max-width: 656px;
 }
 
-.famous-aha h1{
-  font-size: 70px;
+.famous-aha-2 ul{
+  max-width: 718px;
 }
 
 
@@ -289,8 +310,16 @@ img{
 .famous-more{
   font-size: 50px;
   padding-top: 20px;
-  color: #000;
 }
+
+.famous-more ul{
+  max-width: 478px;
+}
+
+.views ul{
+  max-width: 650px;
+}
+
 
 
 .so-what{
@@ -299,21 +328,31 @@ img{
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url(../content/images/Who_cares.png);
-  background-color: #fff;
+  /*background-color: #fff;*/
 }
 
 
 .when{
   font-size: 40px;
-  color: #000;
+  /*color: #000;*/
   padding-top: 20px;
+}
+
+.when ul{
+  max-width: 343px;
 }
 
 .caution{
   font-size: 40px;
-  color: #000;
+  /*color: #000;*/
   padding-top: 20px;
 }
+
+.caution ul{
+  max-width: 614px;
+}
+
+
 
 
 .frameworks{
@@ -322,7 +361,7 @@ img{
   background-size: 40%;
   background-repeat: no-repeat;
   background-image: url(../content/images/frameworks.png);
-  background-color: #fff;
+  /*background-color: #fff;*/
 }
 
 .future{
@@ -335,19 +374,20 @@ img{
 }
 
 .resources a{
-  color: #000;
+  /*color: #000;*/
 }
+
 
 .resources ul{
-  font-weight: 400;
-  padding-top: 40px;
-  list-style: none;
-  font-size: 50px;
-  text-align: left;
-  max-width: 500px;
-  margin: 0 auto;
+  font-size: 65px;
+  max-width: 646px;
 }
 
-.resources li{
-  margin-bottom: 20px;
+
+.final{
+  padding-top: 8%;
+}
+
+.final .ref{
+  margin-top: 10px;
 }

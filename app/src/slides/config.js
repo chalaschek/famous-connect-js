@@ -9,20 +9,10 @@ define(function(require, exports, module) {
       content: require('text!./title.html')
     },
 
-    // {
-    //   classList: ['web-is-dead', 'center'],
-    //   content: require('text!./web-is-dead.html')
-
-    // },
-
-    // {
-    //   classList: ['facebook-abandons-html5'],
-    // },
-
-    // {
-    //   classList: ['flashback', 'center'],
-    //   content: '<img src="/content/images/flashback.jpg"/>'
-    // },
+    {
+      classList: ['map', 'center'],
+      content: '<img src="/content/images/map.png"/>'
+    },
 
     {
       classList: ['timeline', 'center'],
@@ -33,8 +23,6 @@ define(function(require, exports, module) {
       classList: ['iframe', 'center'],
       content: '<iframe src="//player.vimeo.com/video/86664858?autoplay=1" width="800" height="800" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
     },
-
-    
 
     {
       classList: ['iframe', 'center'],
@@ -56,8 +44,7 @@ define(function(require, exports, module) {
     },
 
     {
-      classList: ['what-to-do', 'center', 'text-dark'],
-      backgroundClassList: ['blue-background'],
+      classList: ['what-to-do', 'center'],
       content: require('text!./what-to-do.html')
     },
 
@@ -84,40 +71,40 @@ define(function(require, exports, module) {
     },
 
     {
-      classList: ['famous-what', 'center', 'text-dark'],
-      backgroundClassList: ['gold-background'],
+      classList: ['famous-what', 'center'],
+      // backgroundClassList: ['gold-background'],
       content: require('text!./famous-what.html')
     },
 
 
     {
-      classList: ['famous-aha', 'center', 'text-dark'],
-      backgroundClassList: ['gold-background'],
+      classList: ['famous-aha', 'center'],
+      // backgroundClassList: ['gold-background'],
       content: require('text!./famous-aha.html')
 
     },
 
     {
-      classList: ['famous-aha', 'center', 'text-dark'],
-      backgroundClassList: ['gold-background'],
+      classList: ['famous-aha', 'famous-aha-2', 'center'],
+      // backgroundClassList: ['gold-background'],
       content: require('text!./famous-aha-2.html')
 
     },
 
     {
-      classList: ['single', 'center', 'text-dark'],
-      backgroundClassList: ['blue-background'],
+      classList: ['single', 'center'],
+      // backgroundClassList: ['blue-background'],
       content: '<h1>Fundamentals</h1>'
     },
     {
-      classList: ['single', 'center', 'text-dark'],
-      backgroundClassList: ['blue-background'],
+      classList: ['single', 'center'],
+      // backgroundClassList: ['blue-background'],
       content: '<h1>Forget about DOM</h1>'
     },
 
     {
-      classList: ['single', 'center', 'text-dark'],
-      backgroundClassList: ['blue-background'],
+      classList: ['single', 'center'],
+      // backgroundClassList: ['blue-background'],
       content: '<h1>Render Tree</h1>'
     },
 
@@ -137,6 +124,12 @@ define(function(require, exports, module) {
       classList: ['code-tree', 'center', 'text-dark'],
       backgroundClassList: ['blue-background'],
       content: require('text!./modifiers.html')
+    },
+
+    {
+      classList: ['code-tree', 'center', 'text-dark'],
+      backgroundClassList: ['blue-background'],
+      content: require('text!./tree-branches.html')
     },
 
     {
@@ -184,8 +177,8 @@ define(function(require, exports, module) {
     },
 
     {
-      classList: ['code-tree', 'center', 'text-dark'],
-      backgroundClassList: ['blue-background'],
+      classList: ['views', 'center'],
+      // backgroundClassList: ['blue-background'],
       content: require('text!./views.html')
     },
 
@@ -194,8 +187,8 @@ define(function(require, exports, module) {
     },
 
     {
-      classList: ['famous-more', 'center', 'text-dark'],
-      backgroundClassList: ['blue-background'],
+      classList: ['famous-more', 'center'],
+      // backgroundClassList: ['blue-background'],
       content: require('text!./famous-more.html')
     },
 
@@ -228,20 +221,20 @@ define(function(require, exports, module) {
     },
 
     {
-      classList: ['when', 'center', 'text-dark'],
-      backgroundClassList: ['blue-background'],
+      classList: ['when', 'center'],
+      // backgroundClassList: ['blue-background'],
       content: require('text!./when.html')
     },
 
     {
-      classList: ['caution', 'center', 'text-dark'],
-      backgroundClassList: ['red-background'],
+      classList: ['caution', 'center'],
+      // backgroundClassList: ['red-background'],
       content: require('text!./caution.html')
     },
 
     {
-      classList: ['resources', 'center', 'text-dark'],
-      backgroundClassList: ['blue-background', 'text-dark'],
+      classList: ['resources', 'center'],
+      // backgroundClassList: ['blue-background'],
       content: require('text!./resources.html')
     },
 
@@ -251,8 +244,8 @@ define(function(require, exports, module) {
     },
 
     {
-      classList: ['title'],
-      content: require('text!./title.html')
+      classList: ['title', 'final'],
+      content: require('text!./final.html')
     }
 
   ];
