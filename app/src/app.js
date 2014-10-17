@@ -5,6 +5,7 @@ define(function(require, exports, module) {
   // import dependencies
   var Engine = require('famous/core/Engine');
   var Backbone = require('backbone');
+  var _ = require('underscore');
   var Slide = require('./slides/slide');
   var slides = require('./slides/config');
 
@@ -17,6 +18,14 @@ define(function(require, exports, module) {
     this.slides = {};
     this.mainContext = Engine.createContext();
     this.mainContext.setPerspective(10000);
+
+    this.mainContext.on('resize', function(){
+      _.values(this.slides).forEach(function(slide){
+        slide.setPresentationSize(this.mainContext.getSize() );
+      }.bind(this));
+    }.bind(this))
+
+    
 
     Engine.on('keydown', function(e) {
       if(!this._visibileSlide) return;
@@ -58,6 +67,8 @@ define(function(require, exports, module) {
 
   function loadSlide(number){
     var config = slides[number-1] || {};
+    config.presentationSize = this.mainContext.getSize();
+
     var slide = new Slide(config);
     this.slides[number-1] = slide;
     slide.config({

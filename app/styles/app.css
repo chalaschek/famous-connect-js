@@ -43,7 +43,6 @@ li{
 
 .single h1{
   font-size: 80px;
-  padding-top: 16%;
 }
 
 
@@ -54,6 +53,11 @@ li{
 .text-light {
   color: #fff;
 }
+
+.white-background{
+  background: #fff;
+}
+
 
 .black-background{
   background: rgba(0,0,0,1);
@@ -120,7 +124,6 @@ li{
 .title{
   color: whitesmoke;
   text-align: center;
-  padding-top: 12%;
 }
 
 .title .famous{
@@ -167,7 +170,6 @@ li{
   left: 5px;
 }
 
-
 .map img{
   max-width: 95%;
   max-height: 95%;
@@ -199,7 +201,6 @@ li{
 
 .timeline{
   background-color: #ffffff;
-  padding-top: 20px;
 }
 
 .timeline img{
@@ -225,7 +226,7 @@ li{
 
 .go-fast h1, .smooth h1{
   font-size: 70px;
-  margin-top: 60px;
+  margin-top: 0px;
   margin-bottom: 60px;
 }
 
@@ -233,10 +234,7 @@ li{
 .what-to-do .content{
   margin: 0 auto;
   text-align: left;
-  max-width: 95%;
   font-size: 35px;
-  padding-top: 10px;
-  width: 454px;
 }
 
 .what-to-do li{
@@ -245,8 +243,6 @@ li{
 
 .what-to-do .content h1{
   margin: 0;
-  padding-top: 40px;
-
 }
 
 
@@ -270,10 +266,6 @@ li{
 
 
 
-.famous-what ul{
-  max-width: 575px;
-}
-
 .famous-what h1{
   font-size: 70px;
 }
@@ -287,13 +279,6 @@ li{
   background-image: url(../content/images/famous-hype.png);
 }
 
-.famous-aha ul{
-  max-width: 656px;
-}
-
-.famous-aha-2 ul{
-  max-width: 718px;
-}
 
 
 .code-tree{
@@ -309,15 +294,6 @@ li{
 
 .famous-more{
   font-size: 50px;
-  padding-top: 20px;
-}
-
-.famous-more ul{
-  max-width: 478px;
-}
-
-.views ul{
-  max-width: 650px;
 }
 
 
@@ -328,31 +304,17 @@ li{
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url(../content/images/Who_cares.png);
-  /*background-color: #fff;*/
 }
 
 
 .when{
   font-size: 40px;
-  /*color: #000;*/
-  padding-top: 20px;
 }
 
-.when ul{
-  max-width: 343px;
-}
 
 .caution{
   font-size: 40px;
-  /*color: #000;*/
-  padding-top: 20px;
 }
-
-.caution ul{
-  max-width: 614px;
-}
-
-
 
 
 .frameworks{
@@ -361,7 +323,6 @@ li{
   background-size: 40%;
   background-repeat: no-repeat;
   background-image: url(../content/images/frameworks.png);
-  /*background-color: #fff;*/
 }
 
 .future{
@@ -373,20 +334,11 @@ li{
   background-color: #000;
 }
 
-.resources a{
-  /*color: #000;*/
-}
-
 
 .resources ul{
   font-size: 65px;
-  max-width: 646px;
 }
 
-
-.final{
-  padding-top: 8%;
-}
 
 .final .ref{
   margin-top: 10px;

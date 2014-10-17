@@ -11,12 +11,13 @@ define(function(require, exports, module) {
 
     {
       classList: ['map', 'center'],
-      content: '<img src="/content/images/map.png"/>'
+      content: '<img src="content/images/map.png"/>',
+      contentSize: [undefined, undefined]
     },
 
     {
       classList: ['timeline', 'center'],
-      content: '<img src="/content/images/timeline.png"/>'
+      content: '<img src="content/images/timeline.png"/>',
     },
 
     {
@@ -30,7 +31,7 @@ define(function(require, exports, module) {
     },
 
     {
-      classList: ['why']
+      backgroundClassList: ['why']
     },
 
     {
@@ -49,11 +50,11 @@ define(function(require, exports, module) {
     },
 
     {
-      classList: ['hell']
+      backgroundClassList: ['hell']
     },
 
     {
-      content: require('./famous')
+      content: require('./famous'),
     },
 
     {
@@ -67,8 +68,10 @@ define(function(require, exports, module) {
     },
 
     {
-      classList: ['famous-hype']
+      classList: ['center'],
+      content: '<img src="content/images/famous-hype.png"/>',
     },
+
 
     {
       classList: ['famous-what', 'center'],
@@ -193,31 +196,33 @@ define(function(require, exports, module) {
     },
 
     {
-      classList: ['frameworks']
+      backgroundClassList: ['frameworks']
     },
 
     {
-      classList: ['so-what', 'center']
-    },
-
-    {
-      classList: ['iframe', 'center'],
-      content: require('text!./tunnel.html')
+      backgroundClassList: ['so-what', 'center']
     },
 
     {
       classList: ['iframe', 'center'],
-      content: require('text!./tentacles.html')
+      content: require('text!./tunnel.html'),
+      contentSize: [undefined, undefined]
     },
 
     {
       classList: ['iframe', 'center'],
-      content: '<iframe src="//player.vimeo.com/video/86664858?autoplay=1" width="800" height="800" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+      content: require('text!./tentacles.html'),
+      contentSize: [undefined, undefined]
     },
 
     {
       classList: ['iframe', 'center'],
-      content: '<iframe height="800" width="800" src="http://www.complex.com/2014-fifa-world-cup-guide/" frameborder="0"></iframe>'
+      content: '<iframe src="//player.vimeo.com/video/86664858?autoplay=1" width="800" height="800" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+    },
+
+    {
+      classList: ['iframe', 'center'],
+      content: '<iframe height="800" width="800" src="http://www.complex.com/2014-fifa-world-cup-guide/" frameborder="0"></iframe>',
     },
 
     {
@@ -240,7 +245,7 @@ define(function(require, exports, module) {
 
     {
       classList: ['center'],
-      content: '<img src="/content/images/crystal-ball.jpg"/>'
+      content: '<img src="content/images/crystal-ball.jpg"/>'
     },
 
     {

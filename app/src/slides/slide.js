@@ -11,6 +11,8 @@ define(function(require, exports, module) {
   var Easing = require('famous/transitions/Easing');
   var StateModifier = require('famous/modifiers/StateModifier');
 
+  var SlideContent = require('./slide-content');
+
   var Utils = require('../utils');
 
   var rot = 179;
@@ -23,7 +25,9 @@ define(function(require, exports, module) {
 
     this.content = options.content;
     this.classList = options.classList;
+    this.contentSize = options.contentSize || [true, true];
     this.backgroundClassList = options.backgroundClassList;
+    this.presentationSize = options.presentationSize;
 
     this.background = new Surface({
       classes: this.backgroundClassList
@@ -36,17 +40,7 @@ define(function(require, exports, module) {
     this.contentView = new View();
     this.contentView.state = new Modifier({
       transform: Transform.translate(0,0,20),
-      // origin: [0.5, 0.5],
-      // align: [0.5, 0.5],
-      // // size: [window.innerWidth * 0.5, window.innerHeight * 0.5]
-      // size: [window.innerWidth * 1, window.innerHeight * 1]
     });
-
-    // Engine.on('resize', function(){
-    //   console.log(this.contentView.getSize());
-    //   this.contentView.state.setSize([window.innerWidth * 0.5, window.innerHeight * 0.5]);
-    //   console.log( (window.innerWidth * 0.5) + "  " + (window.innerHeight * 0.5));
-    // }.bind(this));
 
     this.setContent(this.content);
 
@@ -69,19 +63,73 @@ define(function(require, exports, module) {
   Slide.prototype.setContent = function setContent(viewContent) {
 
     var content;
+
+    this.contentMod = new Modifier({});
+
     if(viewContent && typeof viewContent != "string"){
       content = viewContent;
     }else{
       var options = _.extend({}, this.contentConfig || {}, {
         content: viewContent,
         classes: this.classList,
-        // size: [true, true]
+        size: this.contentSize
       });
-      content = new Surface(options);
+      // content = new Surface(options);
+      content = new SlideContent(options);
+
+      content.on('target.size', function(size){
+        // console.log(size)
+        // console.log(window.innerWidth);
+        // console.log(window.innerHeight);
+        this._contentSize = size;
+        this.scale();
+      }.bind(this));
     }
 
-    this.contentView.add(content);
+
+
+    this.contentView.add(this.contentMod).add(content);
   };
+
+  Slide.prototype.scale = function(){
+    if(!this._contentSize) return;
+
+    var size = this._contentSize;
+
+    var pSize = {
+      width: window.innerWidth, //this.presentationSize? this.presentationSize[0] : window.innerWidth,
+      height: window.innerHeight//this.presentationSize? this.presentationSize[1] : window.innerHeight,
+    }
+
+    // console.log(pSize);
+    // console.log(size);
+
+    // console.log('scale');
+    var scale = 1;
+
+    if( size.width > pSize.width || size.height > pSize.height){
+      var wDelta = size.width - pSize.width;
+      var hDelta = size.height - pSize.height;
+      var target, viewport;
+      if(wDelta > hDelta){
+        target = size.width;
+        viewport = pSize.width;
+      } else{
+        target = size.height;
+        viewport = pSize.height;
+      }
+      scale = (viewport / target) * .9;
+    }
+
+    this.contentMod.setTransform(Transform.scale( scale, scale, scale ));
+  }
+
+
+  Slide.prototype.setPresentationSize = function(size){
+    this.presentationSize = size;
+    this.scale();
+  }
+
 
   Slide.prototype.show = function(forward, callback){
     callback = callback || function(){};
@@ -136,7 +184,6 @@ define(function(require, exports, module) {
   Slide.prototype.backward = function(){
     if(this.number > 1) this.router.navigate('/' + (this.number - 1), {trigger:true});
   }
-
 
   module.exports = Slide;
 });

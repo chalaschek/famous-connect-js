@@ -34,7 +34,7 @@ define(function(require, exports, module) {
 
   var logo = new ImageSurface({
       size: [200, 200],
-      content: '/content/images/famous_logo_white.png',
+      content: 'content/images/famous_logo_white.png',
       classes: ['double-sided']
   });
 
