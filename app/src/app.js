@@ -2,44 +2,30 @@
 define(function(require, exports, module) {
   'use strict';
 
-  // import dependencies
   var Engine = require('famous/core/Engine');
   var Backbone = require('backbone');
   var _ = require('underscore');
   var Slide = require('./slides/slide');
   var slides = require('./slides/config');
 
-  Backbone.sync = function(method, model, success, error) {
-    success();
-  };
 
-
-  function initialize(options){
+  function App(){
+    Backbone.Router.apply(this, arguments);
     this.mainContext = Engine.createContext();
     this.mainContext.setPerspective(10000);
-
-    this.mainContext.on('resize', function(){
-      _.values(this.slides).forEach(function(slide){
-        slide.setPresentationSize(this.mainContext.getSize() );
-      }.bind(this));
-    }.bind(this))
-
     this.initEvents();
-
   }
 
 
-  // Holds information about the currently ongoing touch input
-  var touch = {
-      startX: 0,
-      startY: 0,
-      startSpan: 0,
-      startCount: 0,
-      captured: false,
-      threshold: 40
-    };
+  App.prototype = Object.create(Backbone.Router.prototype);
+  App.prototype.constructor = App;
 
-  function initEvents(){
+
+  App.prototype.routes = {
+    '*path' : 'slide'
+  };
+
+  App.prototype.initEvents = function(){
 
     Engine.on('keydown', function(e) {
       if(!this._visibileSlide) return;
@@ -53,52 +39,55 @@ define(function(require, exports, module) {
       this._visibileSlide.forward();
     }.bind(this));
 
+
+    this.touch = {
+      startX: 0,
+      startY: 0,
+      startSpan: 0,
+      startCount: 0,
+      captured: false,
+      threshold: 40
+    };
+
     window.addEventListener( 'touchstart', function(){
-      onTouchStart.apply(this, arguments);
+      this.onTouchStart.apply(this, arguments);
     }.bind(this), false );
     window.addEventListener( 'touchmove', function(){
-      onTouchMove.apply(this, arguments);
+      this.onTouchMove.apply(this, arguments);
     }.bind(this), false );
     window.addEventListener( 'touchend', function(){
-      onTouchEnd.apply(this, arguments);
+      this.onTouchEnd.apply(this, arguments);
     }.bind(this), false );
   }
 
 
 
-  /**
-   * Handler for the 'touchstart' event, enables support for
-   * swipe and pinch gestures.
-   */
-  function onTouchStart( event ) {
-    touch.startX = event.touches[0].clientX;
-    touch.startY = event.touches[0].clientY;
-    touch.startCount = event.touches.length;
+  App.prototype.onTouchStart = function( event ) {
+    this.touch.startX = event.touches[0].clientX;
+    this.touch.startY = event.touches[0].clientY;
+    this.touch.startCount = event.touches.length;
   }
 
-  /**
-   * Handler for the 'touchmove' event.
-   */
-  function onTouchMove( event ) {
+  App.prototype.onTouchMove = function( event ) {
 
     // Each touch should only trigger one action
-    if( !touch.captured ) {
+    if( !this.touch.captured ) {
       var currentX = event.touches[0].clientX;
       var currentY = event.touches[0].clientY;
 
       // There was only one touch point, look for a swipe
-      if( event.touches.length === 1 && touch.startCount !== 2 ) {
+      if( event.touches.length === 1 && this.touch.startCount !== 2 ) {
 
-        var deltaX = currentX - touch.startX,
-          deltaY = currentY - touch.startY;
+        var deltaX = currentX - this.touch.startX,
+          deltaY = currentY - this.touch.startY;
 
-        if( deltaX > touch.threshold && Math.abs( deltaX ) > Math.abs( deltaY ) ) {
-          touch.captured = true;
+        if( deltaX > this.touch.threshold && Math.abs( deltaX ) > Math.abs( deltaY ) ) {
+          this.touch.captured = true;
           if(!this._visibileSlide) return;
           this._visibileSlide.backward();
         }
-        else if( deltaX < -touch.threshold && Math.abs( deltaX ) > Math.abs( deltaY ) ) {
-          touch.captured = true;
+        else if( deltaX < -this.touch.threshold && Math.abs( deltaX ) > Math.abs( deltaY ) ) {
+          this.touch.captured = true;
           if(!this._visibileSlide) return;
           this._visibileSlide.forward();
         }
@@ -113,17 +102,12 @@ define(function(require, exports, module) {
 
   }
 
-  /**
-   * Handler for the 'touchend' event.
-   */
-  function onTouchEnd( event ) {
-    touch.captured = false;
+  App.prototype.onTouchEnd = function( event ) {
+    this.touch.captured = false;
   }
 
 
-
-
-  function slide(){
+  App.prototype.slide = function(){
     var path = window.location.hash || "";
     var num = path.substring(1) || 1;
     num = parseInt(num);
@@ -136,7 +120,7 @@ define(function(require, exports, module) {
 
 
 
-  function loadSlide(number){
+  App.prototype.loadSlide = function(number){
     var config = slides[number-1] || {};
     config.presentationSize = this.mainContext.getSize();
 
@@ -154,7 +138,7 @@ define(function(require, exports, module) {
 
 
 
-  function showSlide(slide) {
+  App.prototype.showSlide = function(slide) {
     var forward = this._visibileSlide && this._visibileSlide.number > slide.number ? false : true;
     function _show(){
       this._visibileSlide = slide;
@@ -165,27 +149,11 @@ define(function(require, exports, module) {
   }
 
 
-
-  function start(){
+  App.prototype.start = function(){
     Backbone.history.start({
      pushState: false
     });
   }
-
-
-
-  var App = Backbone.Router.extend({
-    routes: {
-      '*path' : 'slide'
-    },
-    initialize: initialize,
-    slide: slide,
-    loadSlide: loadSlide,
-    showSlide: showSlide,
-    start: start,
-    initEvents: initEvents
-  });
-
 
   module.exports = App;
 

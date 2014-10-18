@@ -56,7 +56,6 @@ define(function(require, exports, module) {
   }
 
   Slide.prototype = Object.create(View.prototype);
-
   Slide.prototype.constructor = Slide;
 
 
@@ -78,9 +77,6 @@ define(function(require, exports, module) {
       content = new SlideContent(options);
 
       content.on('target.size', function(size){
-        // console.log(size)
-        // console.log(window.innerWidth);
-        // console.log(window.innerHeight);
         this._contentSize = size;
         this.scale();
       }.bind(this));
@@ -97,14 +93,10 @@ define(function(require, exports, module) {
     var size = this._contentSize;
 
     var pSize = {
-      width: window.innerWidth, //this.presentationSize? this.presentationSize[0] : window.innerWidth,
-      height: window.innerHeight//this.presentationSize? this.presentationSize[1] : window.innerHeight,
+      width: window.innerWidth,
+      height: window.innerHeight
     }
 
-    // console.log(pSize);
-    // console.log(size);
-
-    // console.log('scale');
     var scale = 1;
 
     if( size.width > pSize.width || size.height > pSize.height){

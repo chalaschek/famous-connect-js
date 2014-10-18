@@ -12,7 +12,6 @@ define(function(require, exports, module) {
     {
       classList: ['map', 'center'],
       content: '<img src="content/images/map.png"/>',
-      // contentSize: [undefined, undefined]
     },
 
     {
@@ -173,7 +172,6 @@ define(function(require, exports, module) {
 
     {
       classList: [ 'views', 'center'],
-      // backgroundClassList: ['blue-background'],
       content: require('text!./views.html')
     },
 
@@ -183,7 +181,6 @@ define(function(require, exports, module) {
 
     {
       classList: ['famous-more', 'center'],
-      // backgroundClassList: ['blue-background'],
       content: require('text!./famous-more.html')
     },
 
