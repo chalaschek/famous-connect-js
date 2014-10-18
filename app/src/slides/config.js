@@ -12,7 +12,7 @@ define(function(require, exports, module) {
     {
       classList: ['map', 'center'],
       content: '<img src="content/images/map.png"/>',
-      contentSize: [undefined, undefined]
+      // contentSize: [undefined, undefined]
     },
 
     {

@@ -15,7 +15,7 @@ a{
 }
 
 img{
-  max-width: 100%;
+  /*max-width: 100%;*/
 }
 
 ul{
@@ -32,13 +32,18 @@ li{
 }
 
 .iframe{
-  padding-top: 20px;
+  /*padding-top: 20px;*/
 }
 
 .iframe iframe{
-  max-width: 95%;
+/*  max-width: 95%;
   max-height: 100%;
+*/
+  width: 800px;
+  height: 800px;
 }
+
+
 
 
 .single h1{
@@ -171,8 +176,10 @@ li{
 }
 
 .map img{
-  max-width: 95%;
-  max-height: 95%;
+  /*max-width: 95%;
+  max-height: 95%;*/
+  width: 1382px;
+  height: 851px;
 }
 
 .web-is-dead{
@@ -203,10 +210,17 @@ li{
   background-color: #ffffff;
 }
 
+
 .timeline img{
-  max-width: 95%;
+/*  max-width: 95%;
   max-height: 95%;
+*/
+  width: 2000px;
+  height: 1000px;
 }
+
+
+
 
 
 
@@ -228,6 +242,11 @@ li{
   font-size: 70px;
   margin-top: 0px;
   margin-bottom: 60px;
+}
+
+.go-fast img{
+  width: 250px;
+  height: 271px;
 }
 
 

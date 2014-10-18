@@ -25,7 +25,22 @@ define(function(require, exports, module) {
       }.bind(this));
     }.bind(this))
 
-    
+    this.initEvents();
+
+  }
+
+
+  // Holds information about the currently ongoing touch input
+  var touch = {
+      startX: 0,
+      startY: 0,
+      startSpan: 0,
+      startCount: 0,
+      captured: false,
+      threshold: 40
+    };
+
+  function initEvents(){
 
     Engine.on('keydown', function(e) {
       if(!this._visibileSlide) return;
@@ -38,7 +53,74 @@ define(function(require, exports, module) {
       if(!this._visibileSlide) return;
       this._visibileSlide.forward();
     }.bind(this));
+
+    window.addEventListener( 'touchstart', function(){
+      onTouchStart.apply(this, arguments);
+    }.bind(this), false );
+    window.addEventListener( 'touchmove', function(){
+      onTouchMove.apply(this, arguments);
+    }.bind(this), false );
+    window.addEventListener( 'touchend', function(){
+      onTouchEnd.apply(this, arguments);
+    }.bind(this), false );
   }
+
+
+
+  /**
+   * Handler for the 'touchstart' event, enables support for
+   * swipe and pinch gestures.
+   */
+  function onTouchStart( event ) {
+    touch.startX = event.touches[0].clientX;
+    touch.startY = event.touches[0].clientY;
+    touch.startCount = event.touches.length;
+  }
+
+  /**
+   * Handler for the 'touchmove' event.
+   */
+  function onTouchMove( event ) {
+
+    // Each touch should only trigger one action
+    if( !touch.captured ) {
+      var currentX = event.touches[0].clientX;
+      var currentY = event.touches[0].clientY;
+
+      // There was only one touch point, look for a swipe
+      if( event.touches.length === 1 && touch.startCount !== 2 ) {
+
+        var deltaX = currentX - touch.startX,
+          deltaY = currentY - touch.startY;
+
+        if( deltaX > touch.threshold && Math.abs( deltaX ) > Math.abs( deltaY ) ) {
+          touch.captured = true;
+          if(!this._visibileSlide) return;
+          this._visibileSlide.backward();
+        }
+        else if( deltaX < -touch.threshold && Math.abs( deltaX ) > Math.abs( deltaY ) ) {
+          touch.captured = true;
+          if(!this._visibileSlide) return;
+          this._visibileSlide.forward();
+        }
+        event.preventDefault();
+      }
+    }
+    // There's a bug with swiping on some Android devices unless
+    // the default action is always prevented
+    else if( navigator.userAgent.match( /android/gi ) ) {
+      event.preventDefault();
+    }
+
+  }
+
+  /**
+   * Handler for the 'touchend' event.
+   */
+  function onTouchEnd( event ) {
+    touch.captured = false;
+  }
+
 
 
 
@@ -112,7 +194,8 @@ define(function(require, exports, module) {
     fetchSlide: fetchSlide,
     loadSlide: loadSlide,
     showSlide: showSlide,
-    start: start
+    start: start,
+    initEvents: initEvents
   });
 
 
