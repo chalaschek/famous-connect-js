@@ -155,10 +155,6 @@ define(function(require, exports, module) {
   Slide.prototype.hide = function(forward, callback){
     callback = callback || function(){};
 
-    this.render = function(){
-      return null;
-    }
-
     this.topMod.setOpacity(
       0,
       { duration : 400 }
@@ -167,7 +163,12 @@ define(function(require, exports, module) {
     this.topMod.setTransform(
       Transform.rotateY(Utils.degToRadians(forward ? rot : -rot)),
       { duration : 800, curve: Easing.outBack },
-      callback
+      function(){
+        this.render = function(){
+          return null;
+        }
+        callback();
+      }.bind(this)
     );
   }
 
