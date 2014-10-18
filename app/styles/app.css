@@ -249,6 +249,11 @@ li{
   height: 271px;
 }
 
+.smooth img{
+  width: 346px;
+  height: 200px;
+}
+
 
 .what-to-do .content{
   margin: 0 auto;
@@ -290,12 +295,9 @@ li{
 }
 
 
-.famous-hype{
-  background-attachment: fixed;
-  background-position: 50% 0px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-image: url(../content/images/famous-hype.png);
+.famous-hype img{
+  width: 1022px;
+  height: 556px;
 }
 
 
@@ -303,7 +305,6 @@ li{
 .code-tree{
   font-size: 70px;
   font-weight: 400;
-  padding-top: 10%;
 }
 
 .code-tree img{
@@ -314,6 +315,49 @@ li{
 .famous-more{
   font-size: 50px;
 }
+
+.context img{
+  width: 1101px;
+  height: 183px;
+}
+
+.surfaces img{
+  width: 1099px;
+  height: 253px;
+}
+
+
+.modifiers img{
+  width: 1098px;
+  height: 325px;
+}
+
+
+.branches img{
+  width: 877px;
+  height: 338px;
+}
+
+.tranforms img{
+  width: 1100px;
+  height: 276px;
+}
+
+.rotations img{
+  width: 846px;
+  height: 213px;
+}
+
+.curves img{
+  width: 1211px;
+  height: 215px;
+}
+
+.physics img{
+  width: 1211px;
+  height: 215px;
+}
+
 
 
 
@@ -356,6 +400,11 @@ li{
 
 .resources ul{
   font-size: 65px;
+}
+
+.future{
+  width: 1000px;
+  height:800px;
 }
 
 

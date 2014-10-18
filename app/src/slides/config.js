@@ -68,69 +68,61 @@ define(function(require, exports, module) {
     },
 
     {
-      classList: ['center'],
+      classList: ['famous-hype', 'center'],
       content: '<img src="content/images/famous-hype.png"/>',
     },
 
 
     {
       classList: ['famous-what', 'center'],
-      // backgroundClassList: ['gold-background'],
       content: require('text!./famous-what.html')
     },
 
 
     {
       classList: ['famous-aha', 'center'],
-      // backgroundClassList: ['gold-background'],
       content: require('text!./famous-aha.html')
-
     },
 
     {
       classList: ['famous-aha', 'famous-aha-2', 'center'],
-      // backgroundClassList: ['gold-background'],
       content: require('text!./famous-aha-2.html')
-
     },
 
     {
       classList: ['single', 'center'],
-      // backgroundClassList: ['blue-background'],
       content: '<h1>Fundamentals</h1>'
     },
     {
       classList: ['single', 'center'],
-      // backgroundClassList: ['blue-background'],
       content: '<h1>Forget about DOM</h1>'
     },
 
     {
       classList: ['single', 'center'],
-      // backgroundClassList: ['blue-background'],
       content: '<h1>Render Tree</h1>'
     },
 
     {
-      classList: ['code-tree', 'center', 'text-dark'],
+      classList: ['context', 'code-tree', 'center', 'text-dark'],
       backgroundClassList: ['blue-background'],
       content: require('text!./context.html')
     },
 
     {
-      classList: ['code-tree', 'center', 'text-dark'],
+      classList: ['surfaces',  'code-tree', 'center', 'text-dark'],
       backgroundClassList: ['blue-background'],
       content: require('text!./surfaces.html')
     },
 
     {
-      classList: ['code-tree', 'center', 'text-dark'],
+      classList: ['modifiers', 'code-tree', 'center', 'text-dark'],
       backgroundClassList: ['blue-background'],
       content: require('text!./modifiers.html')
     },
 
     {
-      classList: ['code-tree', 'center', 'text-dark'],
+      classList: ['branches', 'code-tree', 'center', 'text-dark'],
       backgroundClassList: ['blue-background'],
       content: require('text!./tree-branches.html')
     },
@@ -140,7 +132,7 @@ define(function(require, exports, module) {
     },
 
     {
-      classList: ['code-tree', 'center', 'text-dark'],
+      classList: ['tranforms', 'code-tree', 'center', 'text-dark'],
       backgroundClassList: ['blue-background'],
       content: require('text!./transforms.html')
     },
@@ -150,7 +142,7 @@ define(function(require, exports, module) {
     },
 
     {
-      classList: ['code-tree', 'center', 'text-dark'],
+      classList: ['rotations', 'code-tree', 'center', 'text-dark'],
       backgroundClassList: ['blue-background'],
       content: require('text!./rotations.html')
     },
@@ -160,7 +152,7 @@ define(function(require, exports, module) {
     },
 
     {
-      classList: ['code-tree', 'center', 'text-dark'],
+      classList: ['curves', 'code-tree', 'center', 'text-dark'],
       backgroundClassList: ['blue-background'],
       content: require('text!./transform-curves.html')
     },
@@ -170,7 +162,7 @@ define(function(require, exports, module) {
     },
 
     {
-      classList: ['code-tree', 'center', 'text-dark'],
+      classList: ['physics', 'code-tree', 'center', 'text-dark'],
       backgroundClassList: ['blue-background'],
       content: require('text!./physics.html')
     },
@@ -180,7 +172,7 @@ define(function(require, exports, module) {
     },
 
     {
-      classList: ['views', 'center'],
+      classList: [ 'views', 'center'],
       // backgroundClassList: ['blue-background'],
       content: require('text!./views.html')
     },
@@ -204,15 +196,13 @@ define(function(require, exports, module) {
     },
 
     {
-      classList: ['iframe', 'center'],
+      classList: ['tunnel', 'iframe', 'center'],
       content: require('text!./tunnel.html'),
-      contentSize: [undefined, undefined]
     },
 
     {
-      classList: ['iframe', 'center'],
+      classList: ['tentacles', 'iframe', 'center'],
       content: require('text!./tentacles.html'),
-      contentSize: [undefined, undefined]
     },
 
     {
@@ -227,24 +217,21 @@ define(function(require, exports, module) {
 
     {
       classList: ['when', 'center'],
-      // backgroundClassList: ['blue-background'],
       content: require('text!./when.html')
     },
 
     {
       classList: ['caution', 'center'],
-      // backgroundClassList: ['red-background'],
       content: require('text!./caution.html')
     },
 
     {
       classList: ['resources', 'center'],
-      // backgroundClassList: ['blue-background'],
       content: require('text!./resources.html')
     },
 
     {
-      classList: ['center'],
+      classList: ['future', 'center'],
       content: '<img src="content/images/crystal-ball.jpg"/>'
     },
 
