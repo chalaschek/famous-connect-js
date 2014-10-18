@@ -15,7 +15,6 @@ define(function(require, exports, module) {
 
 
   function initialize(options){
-    this.slides = {};
     this.mainContext = Engine.createContext();
     this.mainContext.setPerspective(10000);
 
@@ -131,18 +130,8 @@ define(function(require, exports, module) {
 
     if(num > slides.length) return this.navigate('/' + (num-1), {trigger:false});
 
-    var slide = this.fetchSlide(num);
-
-    if(!slide){
-      slide = this.loadSlide(num);
-    }
+    var slide = this.loadSlide(num);
     this.showSlide(slide);
-  }
-
-
-
-  function fetchSlide(number){
-    return this.slides[number-1];
   }
 
 
@@ -152,7 +141,7 @@ define(function(require, exports, module) {
     config.presentationSize = this.mainContext.getSize();
 
     var slide = new Slide(config);
-    this.slides[number-1] = slide;
+
     slide.config({
       number: number,
       next: true,
@@ -191,7 +180,6 @@ define(function(require, exports, module) {
     },
     initialize: initialize,
     slide: slide,
-    fetchSlide: fetchSlide,
     loadSlide: loadSlide,
     showSlide: showSlide,
     start: start,

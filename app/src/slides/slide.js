@@ -155,6 +155,10 @@ define(function(require, exports, module) {
   Slide.prototype.hide = function(forward, callback){
     callback = callback || function(){};
 
+    this.render = function(){
+      return null;
+    }
+
     this.topMod.setOpacity(
       0,
       { duration : 400 }

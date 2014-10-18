@@ -14,13 +14,9 @@ a{
   text-decoration: none;
 }
 
-img{
-  /*max-width: 100%;*/
-}
 
 ul{
   font-weight: 400;
-  padding-top: 40px;
   list-style: none;
   font-size: 70px;
   text-align: left;
@@ -31,19 +27,12 @@ li{
   margin-bottom: 20px;
 }
 
-.iframe{
-  /*padding-top: 20px;*/
-}
+
 
 .iframe iframe{
-/*  max-width: 95%;
-  max-height: 100%;
-*/
   width: 800px;
   height: 800px;
 }
-
-
 
 
 .single h1{
