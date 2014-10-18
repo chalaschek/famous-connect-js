@@ -73,7 +73,7 @@ define(function(require, exports, module) {
         classes: this.classList,
         size: this.contentSize
       });
-      // content = new Surface(options);
+
       content = new SlideContent(options);
 
       content.on('target.size', function(size){
